@@ -3,23 +3,27 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
 import {store} from './store/store'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+//
+// Vue.component('navbar', require('./components/Navbar.vue'));
+
 
 // lazy-loading
-const Home = () => import('./components/Home.vue')
-const Users = () => import('./components/Users.vue')
 const Hello = () => import('./components/Hello.vue')
-const Done = () => import('./components/TodosDone.vue')
-const Open = () => import('./components/TodosOpen.vue')
+
+
+
+
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
+Vue.use(BootstrapVue);
  
 const routes = [
-	{ path: '/', component: Home},
-	{ path: '/users/:teamId', component: Users},
-	{ path: '/hello', component: Hello},
-	{ path: '/open', component: Open},
-	{ path: '/done', component: Done}
+	{ path: '/', component: Hello}
 ];
 
 const router = new VueRouter({
