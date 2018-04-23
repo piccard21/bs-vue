@@ -9,8 +9,12 @@
 			<b-collapse is-nav id="nav_collapse">
 
 				<b-navbar-nav>
-					<b-nav-item v-for="(item, index) in linksLeft" :key="index" :href="item.link"
-					            :disabled="item.disabled">{{item.display}}
+					<b-nav-item v-for="(item, index) in linksLeft"
+					            :key="index"
+					            :href="item.link"
+					            :disabled="item.disabled"
+					            :active="index==0">
+						{{item.display}}
 					</b-nav-item>
 				</b-navbar-nav>
 
@@ -38,6 +42,10 @@
 				'brand': 'AutoDNS',
 				'linksLeft': [{
 					'display': 'Link',
+					'target': '#',
+					'disabled': false
+				}, {
+					'display': 'Something',
 					'target': '#',
 					'disabled': false
 				}, {
